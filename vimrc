@@ -1,5 +1,4 @@
-﻿let $MYVIMRC = $VIM.'/vimrc'
-set nocompatible
+﻿set nocompatible
 set encoding=UTF8
 
 set backspace=indent,eol,start
@@ -88,8 +87,7 @@ nmap <F10> :silent !%:t:r.exe<CR>
 
 filetype off    
 
-"set rtp+=$VIM/vimfiles/bundle/eclim/
-set rtp+=$VIM/vimfiles/bundle/vundle/
+set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 "Bundle 'gmarik/vundle'
@@ -163,4 +161,4 @@ function! s:template_keywords()
     silent %s/\${time}/\=strftime('%H:%M:%S')/g
   endif
 endfunction
-au BufWritePost vimrc :so $MYVIMRC
+"au BufWritePost vimrc :so $MYVIMRC
