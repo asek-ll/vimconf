@@ -1,0 +1,29 @@
+From 0dc34c31de9860bbca25622fe56b08de65134561 Mon Sep 17 00:00:00 2001
+From: Blokhin Denis <denis.blohin@xlogicsoft.com>
+Date: Thu, 20 Jun 2013 09:19:22 +0400
+Subject: [PATCH] fix jsdoc.txt
+
+---
+ doc/jsdoc.txt |    6 ------
+ 1 files changed, 0 insertions(+), 6 deletions(-)
+
+diff --git a/doc/jsdoc.txt b/doc/jsdoc.txt
+index 23f5651..1500298 100644
+--- a/doc/jsdoc.txt
++++ b/doc/jsdoc.txt
+@@ -72,12 +72,6 @@ Define function to your code.
+ ==============================================================================
+ VARIABLES					*jsdoc-vim-variables*
+ 
+-g:jsdoc_input_description			*g:jsdoc_input_description*
+-		If g:jsdoc_input_description is '1' you can input description
+-		interactive.
+-
+-		Default value is '0'
+-
+ g:jsdoc_additional_descriptions		*g:jsdoc_additional_descriptions*
+ 		If g:jsdoc_input_description is '1' @function and @name
+ 		append to JsDoc.
+-- 
+1.7.9
+

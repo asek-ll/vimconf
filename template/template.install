@@ -1,0 +1,32 @@
+<?php
+/**
+ * Description of ${name}
+ *
+ * @author ${user}
+ */
+
+
+/**
+ * Implementation of hook_install().
+ */
+function ${name}_install() {
+  drupal_install_schema("${name}");
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function ${name}_uninstall() {
+  drupal_uninstall_schema("${name}");
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function ${name}_schema() {
+  $schema["${name}"] = array(
+  );
+
+  return $schema;
+}
+

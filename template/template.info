@@ -1,0 +1,7 @@
+; $Id: ${name}.info,v 1.x.x ${date} ${time} xlogicsoft.com Exp $
+name = ${name} module
+description = ${name} module description
+; dependencies[] = xtools
+package = XLogic - Tools
+version = VERSION
+core = 6.x

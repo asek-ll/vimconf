@@ -1,0 +1,33 @@
+From 6c7edb51caff3fe66531042dee2cabee5aafab65 Mon Sep 17 00:00:00 2001
+From: Blokhin Denis <denis.blohin@xlogicsoft.com>
+Date: Thu, 20 Jun 2013 09:02:52 +0400
+Subject: [PATCH] fix RenderContext.vim
+
+---
+ plugin/classes/RenderContext.vim |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/plugin/classes/RenderContext.vim b/plugin/classes/RenderContext.vim
+index 633ad7f..1c382ff 100644
+--- a/plugin/classes/RenderContext.vim
++++ b/plugin/classes/RenderContext.vim
+@@ -81,10 +81,12 @@ fun! s:New( x ) dict "{{{
+     for k in indentkeysList
+ 
+         " "0" is not included
+-        if k[ 1 ] == '='
+-            let self.oriIndentkeys[ k[ 2: ] ] = 1
+-        else
+-            let self.leadingCharToReindent[ k[ 1: ] ] = 1
++        if  strlen(k) > 1
++			if	k[ 1 ] == '='
++				let self.oriIndentkeys[ k[ 2: ] ] = 1
++			else
++				let self.leadingCharToReindent[ k[ 1: ] ] = 1
++			endif
+         endif
+     endfor
+ 
+-- 
+1.7.9
+

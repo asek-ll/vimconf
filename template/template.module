@@ -1,0 +1,21 @@
+<?php
+/**
+ * Description of ${name}
+ *
+ * @author ${user}
+ */
+function ${name}_init() {
+
+}
+
+function ${name}_menu() {
+  $items = array();
+  
+  return $items;
+}
+
+function ${name}_theme() {
+  $items = array();
+
+  return $items;
+}
