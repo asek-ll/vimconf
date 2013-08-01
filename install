@@ -1,3 +1,2 @@
 #!/bin/sh
-ln -s $(pwd)/vimrc ~/vimrc 
-mkdir -p ~/.vim/.vimbackup
+ln -s $(pwd)/vimrc ~/.vimrc 
