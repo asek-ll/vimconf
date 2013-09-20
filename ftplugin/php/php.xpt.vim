@@ -1,4 +1,8 @@
-XPTemplate priority=lang
+if !exists("g:__XPT_VIM__")
+    finish
+endif
+
+XPTemplate priority=personal
 
 XPT array "php array
 array(
@@ -21,3 +25,13 @@ function `name^(`params^){
 
   return $`cache^[$`cid^];
 }
+
+XPT dhook
+/**
+ * Implementation of hook_`hook^()
+ */
+function `fileRoot()^_`hook^(`^){
+}
+
+XPT => "object property
+'`key^' => '`value^',

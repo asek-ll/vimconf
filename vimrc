@@ -37,10 +37,17 @@ if !exists(":DiffOrig")
 endif
 
 if has('gui_running')
+  if has('mouse')
+    set mouse=a
+  endif
   if has('gui_gtk')
     set guifont=Ubuntu\ Mono\ 14
   elseif has('gui_win32')
     set guifont=Consolas:h12
+  endif
+else
+  if has('mouse')
+    set mouse=nv
   endif
 endif
 
@@ -60,9 +67,6 @@ set expandtab
 
 set nu
 set autoread 
-if has('mouse')
-  set mouse=nv
-endif
 set cursorline
 set guioptions-=T
 set guioptions-=m
@@ -77,11 +81,14 @@ set directory=$HOME/.vim/.vimbackup
 nmap <C-Tab> :bp<CR>
 nmap <F1> :NERDTreeToggle<CR>
 nmap <F2> :TagbarToggle<CR>
+nmap <F3> :CtrlP .<CR>
 nmap <A-1> :NERDTreeFind<CR>
 nmap <C-B> :CtrlPBuffer<CR>
 nmap <C-K> \ci
 nmap <F9> :w<CR>:make<CR>
 nmap <F10> :silent !%:t:r.exe<CR>
+nmap <F11> :mks! ~/.vimsess<CR>
+nmap <F12> :so ~/.vimsess<CR>
 
 "VUNDLE
 
@@ -107,8 +114,6 @@ Bundle 'git://github.com/scrooloose/nerdtree.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
 
-"Bundle 'Raimondi/delimitMate'
-
 Bundle 'git://github.com/kien/ctrlp.vim.git'
   let g:ctrlp_custom_ignore = {
         \ 'dir':  '\v[\/](\.git|_x)$'
@@ -117,6 +122,10 @@ Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/spf13/PIV.git'
 Bundle 'git://github.com/thinca/vim-template.git'
 Bundle 'tpope/vim-surround'
+
+Bundle 'bling/vim-airline'
+  let g:airline_theme='dark'
+  set laststatus=2
 
 "snippets
 "Bundle 'git://github.com/SirVer/ultisnips.git'
@@ -128,6 +137,7 @@ Bundle 'git://github.com/drmingdrmer/xptemplate.git'
   let g:xptemplate_key='<Tab>'
   let g:xptemplate_nav_next = '<C-j>'
   let g:xptemplate_nav_prev = '<C-k>'
+  let g:xptemplate_highlight = ''
   "let g:xptemplate_brace_complete = 1
 
 "project
@@ -138,6 +148,10 @@ Bundle 'git://github.com/scrooloose/syntastic.git'
   let g:syntastic_enable_signs=1 
 
 "Bundle 'git://github.com/Valloric/YouCompleteMe.git'
+Bundle 'Raimondi/delimitMate.git'
+  let g:delimitMate_expand_cr = 1
+  let g:delimitMate_expand_space = 1
+  let g:delimitMate_matchpairs = "(:),[:],{:}"
 
 
 filetype plugin indent on
